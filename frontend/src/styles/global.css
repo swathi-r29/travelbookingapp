@@ -1,0 +1,97 @@
+:root {
+  --bg: #0f172a; /* slate-900-ish */
+  --panel: #111827; /* gray-900-ish */
+  --card: #0b1324;
+  --text: #e5e7eb; /* gray-200 */
+  --muted: #94a3b8; /* slate-400 */
+  --brand: #60a5fa; /* blue-400 */
+  --accent: #22c55e; /* green-500 */
+  --border: #1f2937;
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: linear-gradient(180deg, var(--bg), #0b1120);
+  color: var(--text);
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0.2rem 0 0.6rem; }
+p { line-height: 1.6; }
+
+.muted { color: var(--muted); }
+.price { font-weight: 700; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: radial-gradient(1200px 600px at -10% -20%, #0a1640 2%, var(--card) 28%, var(--panel) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.card .card-body { padding: 10px 0 0; }
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #0b1020;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.btn:hover { filter: brightness(1.05); text-decoration: none; }
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--brand);
+}
+
+.stack { display: grid; gap: 12px; }
+.stack.gap-lg { gap: 20px; }
+.stack.center { place-items: center; text-align: center; }
+
+.hero { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; }
+.hero-banner h1 { margin-bottom: 6px; }
+
+footer.footer {
+  border-top: 1px solid var(--border);
+  background: rgba(2,6,23,0.6);
+  backdrop-filter: blur(8px);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
